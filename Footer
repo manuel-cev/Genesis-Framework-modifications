@@ -1,0 +1,11 @@
+<? php 
+//* Do NOT include the opening php tag shown above. Copy the code shown below.
+//* Remove the the creds from the footer
+remove_action( 'genesis_footer', 'genesis_do_footer' );
+//* Customize the entire footer 
+function mc_custom_footer() {
+	echo do_shortcode('[footer_copyright before="Copyright "]');
+	echo ' · <a href="http://YOURSITE.com/">YOURSITE</a> · ';
+	echo '</p></div>';
+}
+add_action( 'genesis_footer', 'mc_custom_footer' );
